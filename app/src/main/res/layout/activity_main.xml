@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/displayPassword"
+        android:layout_alignBottom="@+id/displayPassword"
+        android:layout_alignRight="@+id/imageView1"
+        android:text="@string/welcome_message2"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/textView3"
+        android:layout_toLeftOf="@+id/password"
+        android:text="@string/welcome_message3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/displayUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_title"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TextViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password"
+        android:layout_below="@+id/displayUser"
+        android:text="@string/login"
+        android:textColor="@color/blue"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/displayUser"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/gitdroid" />
+
+    <TextView
+        android:id="@+id/displayPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_marginBottom="17dp"
+        android:text="@string/welcome_message1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextViewLogin"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10"
+        android:hint="@string/username" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="18dp"
+        android:layout_toLeftOf="@+id/forgotPassword"
+        android:text="@string/welcome_message6"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_toRightOf="@+id/displayPassword"
+        android:text="@string/welcome_message5"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignLeft="@+id/textView7"
+        android:text="@string/welcome_message4"
+        android:textColor="@color/blue"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/displayUser"
+        android:layout_marginRight="22dp"
+        android:clickable="true"
+        android:onClick="forgot"
+        android:text="@string/forgot_password"
+        android:textColor="@color/blue" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendData"
+        android:text="@string/sign_in_button"
+        android:textSize="12sp" />
+
+    <CheckBox
+        android:id="@+id/rememberPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignLeft="@+id/password"
+        android:text="@string/remember_password" />
+
+</RelativeLayout>
