@@ -33,13 +33,6 @@ public class DisplayDataActivity extends Activity {
 		set_user=(TextView) findViewById(R.id.set_user);
 		
       	set_user.setText(data_user);
-		
-		
-
-	
-	
-		
-	
 	}
   
 	@Override

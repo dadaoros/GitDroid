@@ -23,13 +23,13 @@ import android.widget.CheckBox;
  *
  */
 public class Login {
-	String r,res;
+	String r;
 	private CheckBox rememberPassword;
 	public Login() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public String logear(String user, String password) throws ClientProtocolException, IOException{
+	public String acceder(String user, String password) throws ClientProtocolException, IOException{
 	
 		String url ="https://api.github.com/notifications";
 		HttpUriRequest request = new HttpGet(url); // Or HttpPost(), depends on your needs 
@@ -42,13 +42,11 @@ public class Login {
 		HttpResponse response=httpclient.execute(request);
 		
 		
-		if(response.getStatusLine().toString().equals("HTTP/1.1 200 OK"))
-		{
+		if(response.getStatusLine().toString().equals("HTTP/1.1 200 OK")){
 			
 			r=EntityUtils.toString(response.getEntity());
-		}
-		else{
-	    r="wrong";
+		}else{
+	        r="wrong";
 		}
 		
 		//r=response.getStatusLine().toString();

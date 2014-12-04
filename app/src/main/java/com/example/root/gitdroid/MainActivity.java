@@ -21,23 +21,27 @@ import com.google.gson.Gson;
 public class MainActivity extends Activity /*implements OAuthCallback */{
 	
 	
-	private Intent intent_data, intent1;
+	private Intent intent_data;
 	private EditText user, password;
-	private TextView TextViewLogin;
-	private String users, passwords, res;
-	private Toast error;
+	private String res;
 	private ProgressDialog pd;
 	private Context context;
-	private Gson json;
+    private ForgotPasswordF forgotPasswordF;
+    private LoginFragment loginFragment ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		context=this;
-		
+		initComponents();
 	}
-	
-	@Override
+
+    private void initComponents() {
+        user=(EditText) findViewById(R.id.user);
+        password=(EditText) findViewById(R.id.password);
+    }
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -47,64 +51,44 @@ public class MainActivity extends Activity /*implements OAuthCallback */{
 	
 	public void sendData(View view) throws IOException, InterruptedException, ExecutionException
 	{
-		user=(EditText) findViewById(R.id.user);
-		password=(EditText) findViewById(R.id.password);
-		user=(EditText) findViewById(R.id.user);
-		password=(EditText) findViewById(R.id.password);
-		users= user.getText().toString();
-		passwords= password.getText().toString();
 		intent_data= new Intent(MainActivity.this, DisplayDataActivity.class);
-		LoginUser l=new LoginUser();
-		l.execute("");
+		LoginUser login=new LoginUser();
+		login.execute("");
 		pd = ProgressDialog.show(context, "Por favor espere","verificando cuenta", true, false);
 	
 	}
 	
 	public class LoginUser extends AsyncTask<String,Void, Object>{
-		
+
 		  // final ProgressDialog dialog=new ProgressDialog(context);
-		   
+
 			@Override
 			protected Integer doInBackground(String... oauthService) {
-				Login log=new Login();
+				Login login=new Login();
 				try {
-					res=log.logear(users, passwords);
+					res=login.acceder(user.getText().toString(), password.getText().toString());
 				} catch (ClientProtocolException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return 1;
 			}
-			
+
 			protected void onPostExecute(Object result)
 			{
 				pd.dismiss();
 				if(res.equals("wrong"))
-				{
-				Toast.makeText(context,"wrong dates",Toast.LENGTH_LONG).show();
-				}
+				    Toast.makeText(context,"There was a problem with your login information. Please try again!",Toast.LENGTH_LONG).show();
 				else{
-					
-				intent_data.putExtra("user",res);
-				startActivity(intent_data);
-		
-				
+					intent_data.putExtra("user",res);
+				    startActivity(intent_data);
 				}
-				
-				super.onPostExecute(result);	
+
+				super.onPostExecute(result);
 			}
 
-			public String loge()
-			{
-				String ser=res;
-			    return ser;
-					
-								}
-	
-	
+
 	/*public void forgot(View password)
 	{
 	intent1=new Intent(this, ForgotPassword.class);
@@ -123,7 +107,7 @@ public class MainActivity extends Activity /*implements OAuthCallback */{
 
 }
 }
-	
+
 
 
 

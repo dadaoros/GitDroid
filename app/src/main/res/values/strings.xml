@@ -3,16 +3,11 @@
 
     <string name="app_name">GitDroid</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="welcome_title">Welcome to GitDroid</string>
     <string name="login">Login:</string>
     <string name="username">Username or Email</string>
     <string name="password">Password</string>
-    <string name="welcome_message1">GitDroid </string>
-    <string name="welcome_message2">is the new </string>
-    <string name="welcome_message3">application    that lets you know all the changes gen erated to reposi tories of your</string>
-    <string name="welcome_message4"> githubt</string>
-    <string name="welcome_message5"> account,</string>
+    <string name="app_description">GitDroid is the new application that lets you know all the changes generated to repositories of your github account,</string>
     <string name="displayUser"> Username:</string>
     <string name="displayPassword"> Password:</string>
     <string name="welcome_message6"> and all from your smartphone</string>
@@ -27,5 +22,7 @@
     <string name="title_activity_display_data">Data</string>
     <string name="todo">TODO</string>
     <string name="title_activity_forgot_password">ForgotPassword</string>
-	<string name="submit">Submit</string>
+    <string name="submit">Submit</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
