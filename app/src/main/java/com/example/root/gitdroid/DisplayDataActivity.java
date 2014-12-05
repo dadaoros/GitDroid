@@ -27,12 +27,10 @@ public class DisplayDataActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_display_data);
-		
 		data_user=getIntent().getStringExtra("user");
-	    
 		set_user=(TextView) findViewById(R.id.set_user);
-		
       	set_user.setText(data_user);
+
 	}
   
 	@Override
@@ -43,7 +41,7 @@ public class DisplayDataActivity extends Activity {
 	}
 	public class GetRepos extends AsyncTask<String,Void, Object>{
 		Manager man=Manager.getInstancia();
-		String url ="https://api.github.com/user/repos";
+		String url ="https://api.github.com/user/";
 		
 		@Override
 		protected Integer doInBackground(String... arg0) {
